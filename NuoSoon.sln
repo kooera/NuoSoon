@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuoSoon.Admin", "NuoSoon.Admin\NuoSoon.Admin.csproj", "{FDE59029-3F56-4835-BABA-A099BE6501B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuoSoon.Admin", "NuoSoon.Admin\NuoSoon.Admin.csproj", "{FDE59029-3F56-4835-BABA-A099BE6501B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuoSoon.Config", "NuoSoon.Config\NuoSoon.Config.csproj", "{0B9CD1AF-D971-45DB-AA17-AA371ECE8DB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuoSoon.Config", "NuoSoon.Config\NuoSoon.Config.csproj", "{0B9CD1AF-D971-45DB-AA17-AA371ECE8DB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuoSoon.DataContext", "NuoSoon.DataContext\NuoSoon.DataContext.csproj", "{B106C7F7-52F8-4ED0-B923-7BA26212D38D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuoSoon.DataContext", "NuoSoon.DataContext\NuoSoon.DataContext.csproj", "{B106C7F7-52F8-4ED0-B923-7BA26212D38D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuoSoon.Filter", "NuoSoon.Filter\NuoSoon.Filter.csproj", "{6DF0FE88-0ABD-4F05-AE91-A71D332BB7DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuoSoon.Filter", "NuoSoon.Filter\NuoSoon.Filter.csproj", "{6DF0FE88-0ABD-4F05-AE91-A71D332BB7DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuoSoon.Repository.EF", "NuoSoon.Repository.EF\NuoSoon.Repository.EF.csproj", "{8119748D-7549-458E-A8D8-11DD41C4FC73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuoSoon.Repository.EF", "NuoSoon.Repository.EF\NuoSoon.Repository.EF.csproj", "{8119748D-7549-458E-A8D8-11DD41C4FC73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuoSoon.Service", "NuoSoon.Service\NuoSoon.Service.csproj", "{1B495CAC-0AEE-4CEF-A9D1-53FF46EFD73B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NuoSoon.Service", "NuoSoon.Service\NuoSoon.Service.csproj", "{1B495CAC-0AEE-4CEF-A9D1-53FF46EFD73B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuoSoon.Api", "NuoSoon.Api\NuoSoon.Api.csproj", "{07F9B8EB-9AB0-4111-A20C-B271BCF5CF77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{1B495CAC-0AEE-4CEF-A9D1-53FF46EFD73B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B495CAC-0AEE-4CEF-A9D1-53FF46EFD73B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B495CAC-0AEE-4CEF-A9D1-53FF46EFD73B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F9B8EB-9AB0-4111-A20C-B271BCF5CF77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F9B8EB-9AB0-4111-A20C-B271BCF5CF77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F9B8EB-9AB0-4111-A20C-B271BCF5CF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F9B8EB-9AB0-4111-A20C-B271BCF5CF77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

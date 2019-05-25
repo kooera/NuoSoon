@@ -9,13 +9,20 @@
 *
 */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace NuoSoon.Filter
 {
-    class GlobalActionFilter
+    public class GlobalActionFilter : IActionFilter
     {
+        public void OnActionExecuted(ActionExecutedContext context)
+        {
+
+        }
+
+        public void OnActionExecuting(ActionExecutingContext context)
+        {
+
+        }
     }
 }

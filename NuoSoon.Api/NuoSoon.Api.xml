@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NuoSoon.Api</name>
+    </assembly>
+    <members>
+        <member name="T:NuoSoon.Api.Controllers.FileController">
+            <summary>
+            文件操作
+            </summary>
+        </member>
+    </members>
+</doc>
