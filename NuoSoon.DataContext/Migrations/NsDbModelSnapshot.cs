@@ -183,6 +183,66 @@ namespace NuoSoon.DataContext.Migrations
                     b.ToTable("GroupRight");
                 });
 
+            modelBuilder.Entity("Vli.Entity.PO.Navigation", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ActionName");
+
+                    b.Property<string>("Actions");
+
+                    b.Property<string>("Code");
+
+                    b.Property<string>("ControllerName");
+
+                    b.Property<string>("CreateIP");
+
+                    b.Property<long>("CreateId");
+
+                    b.Property<DateTime>("CreateTime");
+
+                    b.Property<string>("IconUrl");
+
+                    b.Property<int>("IdChannel");
+
+                    b.Property<int>("IdParent");
+
+                    b.Property<bool>("IsInnerSite");
+
+                    b.Property<bool>("IsLock");
+
+                    b.Property<bool>("IsSys");
+
+                    b.Property<int>("Layer");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Parameter");
+
+                    b.Property<string>("Remark")
+                        .HasMaxLength(255);
+
+                    b.Property<string>("SimpleName");
+
+                    b.Property<int>("Sort");
+
+                    b.Property<string>("Target");
+
+                    b.Property<long>("UpdateId");
+
+                    b.Property<DateTime>("UpdateTime");
+
+                    b.Property<string>("Url")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Navigation");
+                });
+
             modelBuilder.Entity("Vli.Entity.PO.RoleRight", b =>
                 {
                     b.Property<long>("Id")
