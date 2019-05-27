@@ -36,7 +36,7 @@ namespace NuoSoon.Admin.Components
             return View();
         }
 
-        private List<string> GetParent(List<string> code, List<Navigation> navigations, int idParent)
+        private List<string> GetParent(List<string> code, List<Navigation> navigations, long idParent)
         {
             var item = navigations.Where(x => x.Id == idParent).FirstOrDefault();
             if (item == null || item.Id == 0)
@@ -65,7 +65,7 @@ namespace NuoSoon.Admin.Components
             {
                 var navLi = navList.OrderBy(x => x.Sort).ToList();
                 var url = Request.Path.ToString();
-                int id = 0;
+                long id = 0;
                 foreach (var item in navLi)
                 {
                     if (url.Replace("/", "").ToLower().Contains(item.Url.Replace("/", "").ToLower()))

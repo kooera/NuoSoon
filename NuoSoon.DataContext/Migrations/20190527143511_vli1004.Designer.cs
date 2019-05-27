@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NuoSoon.DataContext;
 
 namespace NuoSoon.DataContext.Migrations
 {
     [DbContext(typeof(NsDb))]
-    partial class NsDbModelSnapshot : ModelSnapshot
+    [Migration("20190527143511_vli1004")]
+    partial class vli1004
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

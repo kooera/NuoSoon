@@ -1,8 +1,4 @@
-﻿
-
-using NuoSoon.DataContext;
-using Vli.Repository;
-/**
+﻿/**
 *
 * 功 能： N/A
 * 类 名： AccessRecordRepository
@@ -12,6 +8,9 @@ using Vli.Repository;
 * 版 权： Copyright (c) 2019 Mainki. All rights reserved.
 *
 */
+
+using NuoSoon.DataContext;
+using Vli.Repository;
 namespace NuoSoon.Repository.EF
 {
     public class AccessRecordRepository : IAccessRecordRepository

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Vli.Repository" Version="1.0.28" />
+    <PackageReference Include="Vli.Repository" Version="1.0.32" />
   </ItemGroup>
 
   <ItemGroup>
