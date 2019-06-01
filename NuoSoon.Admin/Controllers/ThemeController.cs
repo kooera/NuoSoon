@@ -8,7 +8,7 @@ using Vli.Core;
 namespace NuoSoon.Admin.Controllers
 {
     [InitNav(Name = "系统设置", Layer = 0)]
-    public class ThemeController : Controller
+    public class ThemeController : BaseController
     {
         [InitNav(Name = "主题设置", Layer = 1)]
         public IActionResult Index()

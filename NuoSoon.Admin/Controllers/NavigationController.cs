@@ -10,7 +10,7 @@ using Vli.Entity.VO;
 namespace NuoSoon.Admin.Controllers
 {
     [InitNav(Name = "系统设置", Layer = 0)]
-    public class NavigationController : Controller
+    public class NavigationController : BaseController
     {
         private readonly INavigationService<Navigation> navigationService;
         public NavigationController(INavigationService<Navigation> navigationService)

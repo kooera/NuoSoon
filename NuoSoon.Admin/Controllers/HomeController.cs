@@ -6,7 +6,7 @@ using Vli.Entity.PO;
 
 namespace NuoSoon.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         IAccessRecordService<AccessRecord> accessRecord;
 
