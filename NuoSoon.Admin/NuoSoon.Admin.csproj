@@ -10,8 +10,8 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
-    <PackageReference Include="Vli.Core" Version="1.0.33" />
-    <PackageReference Include="Vli.UI" Version="1.0.33" />
+    <PackageReference Include="Vli.Core" Version="1.0.34" />
+    <PackageReference Include="Vli.UI" Version="1.0.34" />
   </ItemGroup>
 
 

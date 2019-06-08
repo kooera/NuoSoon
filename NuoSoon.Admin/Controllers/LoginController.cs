@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Vli.Core;
 using Vli.Entity.VO;
+using Vli.Extension;
+using Vli.Static;
 
 namespace NuoSoon.Admin.Controllers
 {
@@ -16,8 +18,10 @@ namespace NuoSoon.Admin.Controllers
     {
         public IActionResult Index()
         {
-            UserInfo userInfo = new UserInfo();
-
+            UserInfo userInfo = new UserInfo
+            {
+                ReturnUrl = Request.GetValue("ReturnUrl")
+            };
             return View(userInfo);
         }
 
@@ -27,11 +31,11 @@ namespace NuoSoon.Admin.Controllers
             if (sysUser.Name == "admin" && sysUser.Pwd == "835374324")
             {               
                 sysUser.AuthenticationType = CookieAuthenticationDefaults.AuthenticationScheme;
-                var identity = new ClaimsIdentity();
+                var identity = new ClaimsIdentity(sysUser);
                 identity.AddClaim(new Claim(ClaimTypes.Name, sysUser.Name));
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
 
-                //result.Code = SystemDict.CODE_SUCCESS;
+                result.Code = SysCode.SUCCESS_1000;
                 result.Data = sysUser.ReturnUrl;
             }
             else

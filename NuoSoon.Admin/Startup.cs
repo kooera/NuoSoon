@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +35,11 @@ namespace NuoSoon.Admin
 
             services.AddDbContext<NsDb>(options => options.UseSqlServer(Configuration.GetConnectionString("SQLServer")));
 
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, x => {
+                x.LoginPath = new PathString("/login");
+                x.AccessDeniedPath = new PathString("/error");
+            });
+
             AutofacService autofac = new AutofacService();
             return autofac.RegisterAutofac(services);
         }
@@ -55,6 +61,7 @@ namespace NuoSoon.Admin
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
