@@ -1,15 +1,14 @@
 ﻿/**
 *
 * 功 能： N/A
-* 类 名： NavigationRepository
+* 类 名： SystemUserRepository
 * 作 者： weili
-* 时 间： 2019/5/27 22:10:25
+* 时 间： 2019/6/15 17:51:23
 * 版 本： 1.0.0.0
 * 版 权： Copyright (c) 2019 Mainki. All rights reserved.
 *
 */
 
-using Microsoft.EntityFrameworkCore;
 using NuoSoon.DataContext;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,17 +17,18 @@ using Vli.Repository;
 
 namespace NuoSoon.Repository.EF
 {
-    public class NavigationRepository : INavigationRepository
+    public class SystemUserRepository : ISystemUserRepository
     {
         private readonly NsDb db;
-        public NavigationRepository(NsDb db)
+
+        public SystemUserRepository(NsDb db)
         {
             this.db = db;
         }
 
-        public List<Navigation> Navigations()
+        public List<SystemUser> ListSystemUser()
         {
-            return db.Navigation.AsNoTracking().ToList();
+            return db.SystemUser == null ? new List<SystemUser>() : db.SystemUser.ToList();
         }
     }
 }

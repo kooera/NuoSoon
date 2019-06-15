@@ -13,9 +13,12 @@ namespace NuoSoon.Admin.Controllers
     public class NavigationController : BaseController
     {
         private readonly INavigationService<Navigation> navigationService;
-        public NavigationController(INavigationService<Navigation> navigationService)
+        private readonly IBaseService<Navigation> baseService;
+
+        public NavigationController(INavigationService<Navigation> navigationService, IBaseService<Navigation> baseService)
         {
             this.navigationService = navigationService;
+            this.baseService = baseService;
         }
                
         public IActionResult Index()
@@ -40,16 +43,16 @@ namespace NuoSoon.Admin.Controllers
 
         private void InitNavigation()
         {
-            var asm = System.Reflection.Assembly.GetExecutingAssembly();
-            //List<Navigation> navigations = navigationService.Navigations();
+            var asm = System.Reflection.Assembly.GetExecutingAssembly();            
             List<Type> typeList = new List<Type>();
             var types = asm.GetTypes();
             foreach (Type type in types)
             {
                 string s = type.FullName.ToLower();
-                if (s.StartsWith("nuosoon.admin.controllers.") || s.StartsWith("nuosoon.web.controllers."))
+                if (s.StartsWith("nuosoon.admin.controllers."))
                     typeList.Add(type);
             }
+
             typeList.Sort(delegate (Type type1, Type type2) { return type1.FullName.CompareTo(type2.FullName); });
             foreach (Type type in typeList)
             {
@@ -97,8 +100,7 @@ namespace NuoSoon.Admin.Controllers
                     topNav.Id = rootData.Id;
                     topNav.Code = rootData.Code;
                 }
-
-                List<Navigation> navList = new List<Navigation>();
+                                
                 foreach (var m in members)
                 {
                     if (m.DeclaringType.Attributes.HasFlag(System.Reflection.TypeAttributes.Public) != true)
@@ -126,7 +128,9 @@ namespace NuoSoon.Admin.Controllers
                                 Name = item.Name,
                                 Url = "/" + (controller + "/" + action).ToLower()
                             };
-                            var subNav = navigationService.Navigations().FirstOrDefault(x => x.Name == item.Name || x.Code == nav.Code);
+                            
+                            var navList = navigationService.Navigations();                           
+                            var subNav = navList.FirstOrDefault(x => x.Name == item.Name || x.Code == nav.Code);                           
                             if (subNav != null && subNav.Id > 0)
                             {
                                 tempNav.Id = subNav.Id;
@@ -135,9 +139,9 @@ namespace NuoSoon.Admin.Controllers
                             else if (item.Layer > 1)
                             {
                                 nav.IdParent = tempNav.Id;
-                                var sub = navigationService.Navigations().FirstOrDefault(x => x.Id == tempNav.Id);
+                                var sub = navList.FirstOrDefault(x => x.Id == tempNav.Id);
                                 sub.Url = "#";
-                                navigationService.Update(sub);
+                                baseService.Update(sub);
                             }
                             else
                             {

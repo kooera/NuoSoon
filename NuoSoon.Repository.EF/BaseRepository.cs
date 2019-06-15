@@ -10,6 +10,7 @@
 */
 
 using NuoSoon.DataContext;
+using System.Threading.Tasks;
 using Vli.Repository;
 
 namespace NuoSoon.Repository.EF
@@ -36,7 +37,7 @@ namespace NuoSoon.Repository.EF
                 return false;
             }
         }
-        
+
         public virtual T GetEntityById(long id)
         {
             var entity = db.Find<T>(id);
@@ -52,8 +53,14 @@ namespace NuoSoon.Repository.EF
 
         public virtual T Update(T entity)
         {
+            UpdateAsync(entity);
+            return entity;
+        }
+
+        public virtual async Task<T> UpdateAsync(T entity)
+        {
             db.Update(entity);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return entity;
         }
     }
