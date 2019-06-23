@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Vli.Entity" Version="1.0.39" />
-    <PackageReference Include="Vli.Repository" Version="1.0.39" />
+    <PackageReference Include="Vli.Entity" Version="1.0.41" />
+    <PackageReference Include="Vli.Repository" Version="1.0.41" />
   </ItemGroup>
 
 </Project>

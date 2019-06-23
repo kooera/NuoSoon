@@ -141,7 +141,7 @@ namespace NuoSoon.Admin.Controllers
                                 nav.IdParent = tempNav.Id;
                                 var sub = navList.FirstOrDefault(x => x.Id == tempNav.Id);
                                 sub.Url = "#";
-                                baseService.Update(sub);
+                                navigationService.UpdateAsync(sub);
                             }
                             else
                             {

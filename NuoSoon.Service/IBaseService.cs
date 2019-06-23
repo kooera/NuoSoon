@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace NuoSoon.Service
 {
@@ -28,5 +29,7 @@ namespace NuoSoon.Service
         /// <param name="id"></param>
         /// <returns></returns>
         T GetEntityById(long id);
+
+        Task<T> UpdateAsync(T entity);
     }
 }

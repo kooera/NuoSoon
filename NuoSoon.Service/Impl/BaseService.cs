@@ -9,6 +9,7 @@
 * 版 权： Copyright (c) 2019 Mainki. All rights reserved.
 *
 */
+using System.Threading.Tasks;
 using Vli.Repository;
 namespace NuoSoon.Service.Impl
 {
@@ -39,6 +40,11 @@ namespace NuoSoon.Service.Impl
         public virtual T Update(T entity)
         {
             return baseRepository.Update(entity);
+        }
+
+        public Task<T> UpdateAsync(T entity)
+        {
+            return baseRepository.UpdateAsync(entity);
         }
     }
 }

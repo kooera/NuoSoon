@@ -38,6 +38,11 @@ namespace NuoSoon.Repository.EF
             }
         }
 
+        public T Find(object obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public virtual T GetEntityById(long id)
         {
             var entity = db.Find<T>(id);
@@ -53,7 +58,8 @@ namespace NuoSoon.Repository.EF
 
         public virtual T Update(T entity)
         {
-            UpdateAsync(entity);
+            db.Update(entity);
+            db.SaveChanges();
             return entity;
         }
 
